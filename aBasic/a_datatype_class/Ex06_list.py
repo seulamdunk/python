@@ -125,20 +125,23 @@ print(a+b)
 """
 a = [7, 2, 3, 5, 6]
 print('-------------------------------------')
+#1
 a.append(0)
 print(a)
-
+#2
+print(a+[9])
+#3
 a.insert(0, 1)
 print(a)
-
+#4
 a.insert(3, 1)
 print(a)
-
+#5
 print(a.pop())
-
+#6
 a.remove(1)
 print(a)
-
+#7
 print(a.clear())
 
 
@@ -167,8 +170,16 @@ print()
 """
 a = [3,5,4,8,0]
 b = [1,2]
-
-
+print('-------------------------------------')
+#8
+a.reverse()
+print(a)
+#9
+a.sort()
+print(a)
+#10
+a.extend(b)
+print(a)
 
 
 
@@ -176,4 +187,35 @@ b = [1,2]
 #  (4) 리스트 요소 변경
 #       - 2번째 요소를 'z'로 변경
 #       - 0번째부터 1번째 요소를 'k'와 'o'로 변경
+print('-------------------------------------')
+a[2]='z'
+a[0:2]='k','o'
+print(a)
 
+
+# --------------------------------------------------------------
+#  (5) 리스트복사
+
+a=[4,5,8,1,2]
+b=a
+print('-'*50)
+print(b)
+print(a is b)
+b[0] =100
+print(a)
+print(b)
+# 같은 주소를 가리키기때문에 출력값이 같다
+
+a=[4,5,8,1,2]
+b=a[:]
+print('-'*50)
+print(b)
+print(a is b)
+b[0] =100
+print(a)
+print(b)
+print('-------------------------------------')
+from copy import copy
+b = copy(a)
+print(b)
+print(b is a)

@@ -84,7 +84,7 @@ for i in range(len(list_a)): # for 변수 in range (횟수)
         list_b.append(list_a[i]) # 반복할 코드
 
 print(list_b)
-# ['Hankook', 'University', 'is', 'an', 'academic', 'institute', 'located', 'in', 'South Korea']
+# ['Hankook', 'is', 'an', 'academic', 'located', 'in', 'South Korea']
 
 
 
@@ -92,7 +92,65 @@ print('7 ------------------------------------------------------')
 a = [1, 2, 3, 5]
 b = ['a', 'b', 'c','d','e']
 a.append('g')
-
+# a=[1, 2, 3, 5, g]
 b.append(6)
-
+# b=['a', 'b', 'c','d','e', 6]
 print('g' in b, len(b))
+# False 6
+
+
+print('8 ------------------------------------------------------')
+list_a = ['Hankook', 'University', 'is', 'an', 'academic', 'institute', 'located', 'in', 'South Korea']
+list_b=[ ]
+
+for i in range(len(list_a)):
+
+    if i % 2 != 1:
+        list_b.append(list_a[i])
+        # ['Hankook', 'is', 'an', 'academic', 'located', 'in', 'South Korea']
+print(list_b)
+
+
+print('9 ------------------------------------------------------')
+#admission_year = input("입학 연도를 입력하세요: ")
+#print(type(admission_year))
+
+
+
+print('10 ------------------------------------------------------')
+country = ["Korea", "Japan", "China"]
+capital = ["Seoul", "Tokyo", "Beijing"]
+index = [1, 2, 3]
+
+country.append(capital)
+# ["Korea", "Japan", "China", ["Seoul", "Tokyo", "Beijing"]]
+
+country[3][1] = index[1:]
+# ["Korea", "Japan", "China", ["Seoul", 2, 3, "Beijing"]]
+print(country)
+
+
+
+print('11 ------------------------------------------------------')
+a = [5, 4, 3, 2, 1]
+b = a
+print(b)
+c = [5, 4, 3, 2, 1]
+print(a is b)
+# b가 a를 가리키기 때문에 > a is b는 True
+print(a is c)
+# 배열의 값이 같을뿐 가리키는 주소는 다르기때문에 > False
+
+
+
+print('12 ------------------------------------------------------')
+a = 1
+b = 1
+print(a is b)
+# True
+
+a = 300
+b = 300
+print(a is b)
+#False > (X) True
+

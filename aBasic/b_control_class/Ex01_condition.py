@@ -34,7 +34,62 @@ i8=dict()
 i9={}
 i10=None
 
+a = -1
+if a:
+    print('True') #
+else:
+    print('False')
 
+print('======')
+
+a = 10
+b = -1
+
+print(a and b) #-1
+print(a or b) #10
+
+'''
+    A B     A & B       A | B
+    --------------------------
+    T T       T           T
+    T F       F           T
+    F T       F           T
+    F F       F           F
+'''
+if a and b:
+    print('True') #
+else:
+    print('False')
+
+if a or b:
+    print('True') #
+else:
+    print('False')
+
+print('======')
+a = 10
+if a:
+    c=2
+elif b:
+    c=4
+else :
+    c=6
+
+print(c) # 2
+
+
+print('======')
+#------------------------------------
+word = 'korea'
+
+if word.find('k')>-1: # korea에 'k'포함하면 출력
+    print('1 > '+word)
+# find 인덱스를 검색 > k의 인덱스 0 > 0은 False이기 때문에 출력되지 않음
+
+if word.find('z')>-1:  # korea에 'z'포함하면 출력
+    print('2 > '+word)
+# find 인덱스를 검색 > z의 인덱스 없음  > 0이 아닌 숫자는 True이기 때문에 출력
+# 제대로 출력되려면 -1보다 크다라는 조건을 걸어준다
 
 
 
