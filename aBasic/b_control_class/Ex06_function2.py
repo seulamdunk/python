@@ -1,5 +1,7 @@
 
 # [추가] 함수도 객체이다
+
+
 def case1():
     print('case-1')
 
@@ -9,13 +11,56 @@ def case2():
 def case3():
     print('case-3')
 
+f = { 'a1':case1, 'a2':case2, 'a3':case3 }
+print(f['a2'])
+f['a2']() # 함수객체 ()함수호출
+print(f['a2']())
+
 
 
 #---------------------------------------
 # 글로벌 변수와 지역변수
+# 글로벌변수 (전역변수) : 함수를 포함하여 스크립트 전체에서 접근할 수 있는 변수
+# 지역변수 : 변수를 만든 함수 안에서만 접근할 수 있는 변수이다. 함수 바깥에서는 접근할 수 없다.
+'''
+# (1)
+temp = '글로벌'
+def func():
+    print('1>', temp)
+
+func()
+print('2>', temp)
+
+
+print()
+# (2)
+temp = '글로벌'
+def func():
+    # print('0'> temp) > 에러 > 지역변수 선언이 감지되는데, 앞에 선언했기때문에 지역변수 값이 없어서 에러발생
+    temp = '지역'
+    print('1>', temp) #지역
+
+func()
+print('2>', temp) #글로벌
+'''
+
+
+print()
+# (3)
+temp = '글로벌'
+def func():
+    global temp
+    temp = '지역'
+    print('1>', temp) #지역
+
+func()
+print('2>', temp) #지역
 
 
 
+
+
+print()
 '''
 #----------------------------------------------
 # 람다함수 - 한번 사용하고 버리는 함수
@@ -27,6 +72,14 @@ def case3():
     종종 사용됨
 '''
 
+def f(x, y):
+    return x+y
+
+print(f(3,2))
+
+# 람다함수
+f = lambda x,y : x+y
+print(f(3,2))
 
 
 #-----------------------------------------------------------
@@ -42,7 +95,28 @@ def case3():
     파이썬 2.x에서는 많이 사용하던 함수이지만, 최근 문법의 복잡성으로 권장하지 않는 추세란다.
 """
 
+#(1) map
+def calc(x):
+    return x*2
+
+# calc = lambda x : x*2
+
+data = [1,2,3,4,5]
+#for i in data:
+#    calc(i)
+
+result = list(map(calc, data))
+print(result)
+
+print(list(map(lambda x : x*2, [1,2,3,4,5])))
 
 
+print()
+#(2)
+from functools import reduce
 
+def f(x,y):
+    return x*y
+
+print(reduce(f,data)) # data = [1,2,3,4,5] > 1*2*3*4*5
 

@@ -23,7 +23,7 @@ print(t) # [1, 100, 3]
 t = (1,2,3)
 print(t[0])
 print(type(t)) # tuple
-# t[1] = 100
+t[1] = 100
 print(t) # 에러
 
 

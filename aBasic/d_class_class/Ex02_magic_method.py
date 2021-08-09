@@ -1,3 +1,27 @@
+
+class Sample:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return ('이름: {} \n나이: {}'.format(self.name, self.age))
+
+    def __add__(self, other):
+        self.age += other
+
+    def __ge__(self, other):
+        if self.age >= other:
+            return '성인'
+        else:
+            return '미성인'
+
+s = Sample('홍길동', 33)
+print(s)
+s + 10
+print(s)
+print(s>=20) # 나이가 20이상이면 성인이고 그렇지 않으면 미성인
+
 """
     매직 메소드
 

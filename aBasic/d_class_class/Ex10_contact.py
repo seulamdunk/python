@@ -13,6 +13,7 @@ class Contact:
         print("주소;", self.addr)
 
 def print_menu():
+    print()
     print('1. 연락처 입력')
     print('2. 연락처 출력')
     print('3. 연락처 삭제')
@@ -21,15 +22,23 @@ def print_menu():
     return int(menu)
 
 def set_contact():
-    # 여기에 코드 작성
+    name=input('이름은?')
+    phone_number=input('전화번호는?')
+    eamil=input('이메일은?')
+    addr=input('주소는?')
+    contact = Contact(name, phone_number, eamil, addr)
+    return contact
     pass
 
 def print_contact(contact_list):
-    # 여기에 코드 작성
+    for contact in contact_list:
+        contact.print_info()
     pass
 
 def delete_contact(contact_list, name):
-    # 여기에 코드 작성
+    for i, contact in enumerate(contact_list):
+        if contact.name == name:
+            del contact_list[i]
     pass
 
 def run():
